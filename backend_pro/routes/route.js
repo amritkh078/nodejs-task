@@ -26,6 +26,8 @@ router.post('/post', (req,res)=>{
     )
 })
 
+// put request
+
 
 
 export default router;
