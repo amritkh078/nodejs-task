@@ -1,6 +1,22 @@
 import toast from 'react-hot-toast';
 
 
+/** validate login page username */
+export async function usernameValidate(values){
+    const errors = usernameVerify({}, values);
+
+    if(values.username){
+        // check user exist or not
+        const { status } = await authenticate(values.username);
+        
+        if(status !== 200){
+            errors.exist = toast.error('User does not exist...!')
+        }
+    }
+
+    return errors;
+}
+
 /** validate username */
 function usernameVerify(error = {}, values){
     if(!values.username){
@@ -12,8 +28,3 @@ function usernameVerify(error = {}, values){
     return error;
 }
 
-// validate login username
-export async function usernameValidate(values){
-    const error = usernameVerify(error, values);
-    return error;
-}
