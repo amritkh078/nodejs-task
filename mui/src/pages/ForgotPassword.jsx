@@ -29,7 +29,7 @@ const ForgotPassword = () => {
             autoFocus
         /><br/>
         <TextField margin='normal' required id='password' label='password' autofocus/><br/>
-        <Button variant='contained' href='/login'>Reset</Button>
+        <Button color='' variant='contained' href='/login'>Reset</Button>
     </ThemeProvider>
   )
 }
